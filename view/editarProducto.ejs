@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar producto</title>
+    <link rel="stylesheet" href="http://localhost:3012/css/estilos.css">
+    <script src="js/script.js" defer></script>
+    <script src="js/scriptBlur.js" defer></script>
+    <script src="https://kit.fontawesome.com/e6060c4e37.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>Editar producto</h1>
+<div class="contenedor">
+    <form action="/editarProducto" method="post" id="formulario">
+        <input type="hidden" value="<%= producto.id %>" name="id" id="idproducto" >
+        
+        <label for="nombre">Nombre: </label> <span class="errorNombre ocultar">Nombre no válido</span>
+        <input type="text" value="<%= producto.nombre %>" class="" autofocus name="nombre" id="nombre" placeholder="Nombre del producto" /><span></span>
+        <i class="fa-solid fa-xmark ocultar xmarkErrorNombre correctoInput"></i>
+        <i class="fa-solid fa-check checkMarkNombre ocultar"></i>
+
+        <label for="descripcion">Descripción: </label> <span class="errorDescripcion ocultar">Descripción no válida</span>
+        <textarea  name="descripcion" id="descripcion" placeholder="Descripción del producto"><%= producto.descripcion %></textarea><span></span>
+        <i class="fa-solid ocultar fa-xmark xmarkErrorDescripcion correctoInput"></i>
+        <i class="fa-solid fa-check checkMarkDescripcion ocultar"></i>
+
+        <label for="precio">Precio: </label> <span class="errorPrecio ocultar">Precio no válido</span>
+        <input value="<%= producto.precio %>" name="precio" id="precio" type="number" step="0.01" placeholder="Precio del producto"><span></span>
+        <i class="fa-solid ocultar fa-xmark xmarkErrorPrecio correctoInput"></i>
+        <i class="fa-solid fa-check checkMarkPrecio ocultar"></i>
+
+        <label for="stock">Stock: </label> <span class="errorStock ocultar">Stock no válido</span>
+        <input value="<%= producto.stock %>" name="stock" id="stock" type="number" placeholder="Stock disponible"><span></span>
+        <i class="fa-solid ocultar fa-xmark xmarkErrorStock correctoInput"></i>
+        <i class="fa-solid fa-check checkMarkStock ocultar"></i>
+
+        <button type="submit">Editar producto</button>
+    </form>
+</div>
+
+<%- include("templates/footer") %>
+</body>
+</html>

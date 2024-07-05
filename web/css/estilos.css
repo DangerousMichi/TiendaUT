@@ -1,0 +1,95 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+form{
+    width: 300px;
+    box-shadow: 0 0 20px rgb(53, 62, 96);
+    padding: 20px;
+    border-radius: 7px;
+    margin-top: 25px;
+}
+label{
+    margin-top: 10px;
+}
+input{
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+    background-color: rgb(119, 144, 176);
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid rgb(42, 62, 107);
+    width: 80%;
+}
+button{
+    margin-top: 10px;
+    padding: 5px;
+    background-color: rgb(28, 47, 94);
+    border: 0px;
+    border-radius: 7px;
+    cursor: pointer;
+    color: aliceblue;
+}
+button:hover{
+    background-color: rgb(67, 115, 158);
+    color: white;
+}
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.errorInput{
+    background-color: rgb(235, 196, 196) ;
+    border: solid 2px red;
+}
+
+.correctoInput{
+    background-color: rgb(65, 194, 84) ;
+    border: solid 2px rgb(74, 201, 11);
+}
+
+.errorCelular,.errorCorreo,.errorNombre{
+    font-size: small;
+    color: red;
+}
+
+
+.xmarkErrorCorreo,.xmarkErrorNombre,.xmarkErrorCelular{
+    color: red;
+}
+
+.checkMarkNombre,.checkMarkCorreo,.checkMarkCelular{
+    color: rgb(75, 188, 75);
+}
+
+.ocultar{
+    display: none;
+    visibility: hidden;
+}
+
+#mostarDatos{
+    background-color: rgba(85, 102, 118, 0.504);
+    border-radius: 7%;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom:50px;
+    margin-top: 50px;
+}
+
+#descripcion{
+    background-color: rgb(119, 144, 176);
+    border: 2px solid rgb(42, 62, 107);
+}
+
+#DetallesProd {
+    background-color: rgba(85, 102, 118, 0.504);
+    border-radius: 7%;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom:50px;
+    margin-top: 50px;
+}
