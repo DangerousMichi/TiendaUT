@@ -6,7 +6,7 @@ class UsuarioDB extends ConectarBD {
     }
 
     async nuevoUsuario(usuario) {
-        const sql = "INSERT INTO usuarios VALUES(null, '"+usuario.nombre+"', '"+usuario.celular+"', '"+usuario.correo+"');";
+        const sql = "INSERT INTO USUARIOS VALUES(null, '"+usuario.nombre+"', '"+usuario.celular+"', '"+usuario.correo+"');";
         try {
             await this.conectarMySQL();
             await this.conexion.execute(sql);
@@ -34,7 +34,7 @@ class UsuarioDB extends ConectarBD {
         }
     }
     async buscarUsuarioPorID(idUsuario){
-        const sql="SELECT * FROM usuarios WHERE idusuario="+ idUsuario;
+        const sql="SELECT * FROM USUARIOS WHERE idusuario="+ idUsuario;
         try {
             await this.conectarMySQL();
             const usuario=await this.conexion.execute(sql);
