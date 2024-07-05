@@ -19,7 +19,7 @@ class UsuarioDB extends ConectarBD {
     }
 
     async mostrarUsuarios(){
-        const sql = "SELECT * FROM usuarios";
+        const sql = "SELECT * FROM USUARIOS;";
         var usuariosBD;
         try{
             await this.conectarMySQL();

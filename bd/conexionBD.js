@@ -1,4 +1,4 @@
-require('dotevn').config();
+require('dotenv').config();
 class ConectarBD {
     constructor() {
     this.conexion = null;
@@ -8,11 +8,11 @@ class ConectarBD {
     try {
         this.conexion=await this.mysql.createConnection({
         
-        host:process.evn.HOSTMYSQL,
-        user:process.evn.USERMYSQL,
-        password:process.evn.PASSWORDMYSQL,
-        database:process.evn.DATABASEMYSQL,
-        port:process.evn.PORTMYSQL
+        host:process.env.HOSTMYSQL,
+        user:process.env.USERMYSQL,
+        password:process.env.PASSWORDMYSQL,
+        database:process.env.DATABASEMYSQL,
+        port:process.env.PORTMYSQL
 
         });
         console.log("Conexion creada a MySql");
