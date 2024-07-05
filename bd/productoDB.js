@@ -6,7 +6,7 @@ class ProductoDB extends ConectarBD {
     }
 
     async nuevoProducto(producto) {
-        const sql = `INSERT INTO productos (nombre, descripcion, precio, stock) VALUES ('${producto.nombre}', '${producto.descripcion}', ${producto.precio}, ${producto.stock});`;
+        const sql = `INSERT INTO PRODUCTOS (nombre, descripcion, precio, stock) VALUES ('${producto.nombre}', '${producto.descripcion}', ${producto.precio}, ${producto.stock});`;
         try {
             await this.conectarMySQL();
             await this.conexion.execute(sql);
@@ -19,7 +19,7 @@ class ProductoDB extends ConectarBD {
     }
 
     async mostrarProductos() {
-        const sql = "SELECT * FROM productos";
+        const sql = "SELECT * FROM PRODUCTOS";
         var productosBD;
         try {
             await this.conectarMySQL();
@@ -40,7 +40,7 @@ class ProductoDB extends ConectarBD {
     
 
     async buscarProductoPorID(idProducto) {
-        const sql = `SELECT * FROM productos WHERE id=${idProducto}`;
+        const sql = `SELECT * FROM PRODUCTOS WHERE id=${idProducto}`;
         try {
             await this.conectarMySQL();
             const [result] = await this.conexion.execute(sql);
@@ -56,7 +56,7 @@ class ProductoDB extends ConectarBD {
 
     async editarProducto(producto) {
         const sql = `
-        UPDATE productos SET
+        UPDATE PRODUCTOS SET
         nombre="${producto.nombre}",
         descripcion="${producto.descripcion}",
         precio=${producto.precio},
@@ -75,7 +75,7 @@ class ProductoDB extends ConectarBD {
     }
 
     async borrarProducto(idProducto) {
-        const sql = `DELETE FROM productos WHERE id=${idProducto}`;
+        const sql = `DELETE FROM PRODUCTOS WHERE id=${idProducto}`;
         try {
             await this.conectarMySQL();
             await this.conexion.execute(sql);

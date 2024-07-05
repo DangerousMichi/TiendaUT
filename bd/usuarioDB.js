@@ -49,7 +49,7 @@ class UsuarioDB extends ConectarBD {
 
     async editarUsuario(usuario){
         const sql2=`
-        UPDATE usuarios SET
+        UPDATE USUARIOS SET
         nombre="${usuario.nombre}",
         celular="${usuario.celular}",
         correo="${usuario.correo}"
@@ -66,7 +66,7 @@ class UsuarioDB extends ConectarBD {
     }
 
     async borrarUsuario(idusuario){
-        const sql="DELETE FROM usuarios WHERE idusuario="+idusuario;
+        const sql="DELETE FROM USUARIOS WHERE idusuario="+idusuario;
         try {
             await this.conectarMySQL();
             await this.conexion.execute(sql);
