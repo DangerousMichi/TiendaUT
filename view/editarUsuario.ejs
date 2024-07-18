@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 4</title>
-    <link rel="stylesheet" href="http://localhost:3012/css/estilos.css">
-    <script src="js/script.js" defer></script>
-    <script src="js/scriptBlur.js" defer></script>
-    <script src="https://kit.fontawesome.com/e6060c4e37.js" crossorigin="anonymous"></script>
-</head>
-<body>
-<h1>Editar usuario</h1>
+<%- include("templates/header") %>
+
 <div class="contenedor">
     <form action="/editarUsuario" method="post" id="formulario">
         <input type="hidden" value="<%= idusuario %>" name="idusuario" id="idusuario" >

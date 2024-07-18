@@ -115,10 +115,24 @@ ruta.get("/editarProducto/:idproducto", async (req, res) => {
 
 // Editar producto
 ruta.post("/editarProducto", async (req, res) => {
+    const producto = {
+        idproducto: req.body.idproducto,
+        nombre:req.body.nombre,
+        descripcion:req.body.descripcion,
+        precio: parseFloat(req.body.precio),
+        stock: parseInt(req.body.stock)
+    };
+    
     const productoDB = new ProductoDB();
-    const producto1 = new ProductoClase(req.body);
-        await productoDB.editarProducto(req.body);
+    
+    const producto1 = new ProductoClase(producto);
+
+    if (producto1.nombre != undefined && producto1.descripcion != undefined && !isNaN(producto1.precio) && !isNaN(producto1.stock)) {
+        await productoDB.editarProducto(producto1.obtenerDatos);
         res.redirect("/productos");
+    }else{
+        res.render("error");
+    }
 });
 
 // Borrar producto

@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar producto</title>
-    <link rel="stylesheet" href="http://localhost:3012/css/estilos.css">
-    <script src="js/script.js" defer></script>
-    <script src="js/scriptBlur.js" defer></script>
-    <script src="https://kit.fontawesome.com/e6060c4e37.js" crossorigin="anonymous"></script>
-</head>
-<body>
+<%- include("templates/header") %>
 <h1>Editar producto</h1>
 <div class="contenedor">
     <form action="/editarProducto" method="post" id="formulario">
-        <input type="hidden" value="<%= producto.id %>" name="id" id="idproducto" >
+        <input type="hidden" value="<%= producto.idproducto %>" name="idproducto" id="idproducto" >
         
         <label for="nombre">Nombre: </label> <span class="errorNombre ocultar">Nombre no válido</span>
         <input type="text" value="<%= producto.nombre %>" class="" autofocus name="nombre" id="nombre" placeholder="Nombre del producto" /><span></span>
@@ -40,5 +29,4 @@
 </div>
 
 <%- include("templates/footer") %>
-</body>
-</html>
+

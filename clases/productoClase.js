@@ -1,14 +1,14 @@
 class Producto {
     constructor(producto) {
-        this.id = producto.idproducto;
+        this.idproducto = producto.idproducto;
         this.nombre = producto.nombre;
         this.descripcion = producto.descripcion;
-        this.precio = producto.precio;
-        this.stock = producto.stock;
+        this.precio = parseFloat(producto.precio);
+        this.stock = parseInt(producto.stock);
     }
 
-    set id(id) {
-        this._id = id;
+    set idproducto(idproducto) {
+        this._idproducto = idproducto;
     }
 
     set nombre(nombre) {
@@ -47,8 +47,8 @@ class Producto {
         }
     }
 
-    get id() {
-        return this._id;
+    get idproducto() {
+        return this._idproducto;
     }
 
     get nombre() {
@@ -69,7 +69,7 @@ class Producto {
 
     get obtenerDatos() {
         return {
-            id: this.id,
+            idproducto: this.idproducto,
             nombre: this.nombre,
             descripcion: this.descripcion,
             precio: this.precio,

@@ -6,7 +6,7 @@ class UsuarioDB extends ConectarBD {
     }
 
     async nuevoUsuario(usuario) {
-        const sql = "INSERT INTO USUARIOS VALUES(null, '"+usuario.nombre+"', '"+usuario.celular+"', '"+usuario.correo+"');";
+        const sql = "INSERT INTO usuarios VALUES(null, '"+usuario.nombre+"', '"+usuario.celular+"', '"+usuario.correo+"');";
         try {
             await this.conectarMySQL();
             await this.conexion.execute(sql);
@@ -19,7 +19,7 @@ class UsuarioDB extends ConectarBD {
     }
 
     async mostrarUsuarios(){
-        const sql = "SELECT * FROM USUARIOS;";
+        const sql = "SELECT * FROM usuarios";
         var usuariosBD;
         try{
             await this.conectarMySQL();
@@ -34,7 +34,7 @@ class UsuarioDB extends ConectarBD {
         }
     }
     async buscarUsuarioPorID(idUsuario){
-        const sql="SELECT * FROM USUARIOS WHERE idusuario="+ idUsuario;
+        const sql="SELECT * FROM usuarios WHERE idusuario="+ idUsuario;
         try {
             await this.conectarMySQL();
             const usuario=await this.conexion.execute(sql);
@@ -49,7 +49,7 @@ class UsuarioDB extends ConectarBD {
 
     async editarUsuario(usuario){
         const sql2=`
-        UPDATE USUARIOS SET
+        UPDATE usuarios SET
         nombre="${usuario.nombre}",
         celular="${usuario.celular}",
         correo="${usuario.correo}"
@@ -66,7 +66,7 @@ class UsuarioDB extends ConectarBD {
     }
 
     async borrarUsuario(idusuario){
-        const sql="DELETE FROM USUARIOS WHERE idusuario="+idusuario;
+        const sql="DELETE FROM usuarios WHERE idusuario="+idusuario;
         try {
             await this.conectarMySQL();
             await this.conexion.execute(sql);
