@@ -4,7 +4,7 @@ const UsuarioDB = require("../bd/usuarioDB");
 const ProductoClase = require("../clases/productoClase");
 const ProductoDB = require("../bd/productoDB");
 
-ruta.get("/", async (req, res) => {
+ruta.get("/", async (req, res) => { //comentario
     const usuariobd = new UsuarioDB()
     var usuarios = await usuariobd.mostrarUsuarios();
     var usuariosCorrectos=[];
